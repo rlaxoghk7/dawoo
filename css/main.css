@@ -433,6 +433,27 @@
 #mainBul.bullets {position: absolute; top:70%;left: 50%;transform: translateX(-50%);display: flex;align-items: center;justify-content: center; z-index: 99;}
 #mainBul.bullets span{width: 17px;height: 17px;background: #ffffff6b;opacity:1;}
 #mainBul.bullets span.swiper-pagination-bullet-active{background: #fff;/* border:3px solid #fff; */width:17px;height:17px;/* margin: 0 9px; */}
+
+/* 프로그래스바 */
+.main_visual .progressbar {
+  position: absolute;
+  bottom: 100px;
+  right: 10%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 10px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.main_visual .progressbar-fill {
+  width: 0;
+  height: 100%;
+  background: #3763f5;       /* 포인트 컬러 */
+  transform-origin: left center;
+}
 /* //230515 유지보수 수정 종료 */
 .main_visual .bg {
     text-align: center;

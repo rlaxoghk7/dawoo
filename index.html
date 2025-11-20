@@ -545,6 +545,12 @@
       </div>
       <div id="mainBul" class="bul bullets"></div> <!-- //230515 유지보수 수정 -->
 
+	  <!-- 로딩바 -->
+	  <div class="progressbar">
+      	<div class="progressbar-fill"></div>
+      </div>
+	  <!-- //로딩바 -->
+
 	  <!-- 비쥬얼탭 -->
 	<div class="main-visual-tab pc">
 		<div class="auto">
@@ -602,6 +608,11 @@
          type: "bullets",
          clickable: true // 230515 유지보수 추가
          },
+		 //프로그래스바
+		 paginationProgressbar: {
+    	 el: ".main_visual .progressbar",
+     	 type: "progressbar",
+  		 },
 
          //네비게이션
          navigation: {
@@ -610,7 +621,45 @@
          },
 
         });
+		// ✅ 로딩바 DOM 가져오기
+  		 const progressBar = document.querySelector('.main_visual .progressbar-fill');
+  		 const autoplayDelay = mv_swiper.params.autoplay.delay; // 3000ms
 
+  		// ✅ 로딩바 애니메이션 함수
+  		 function startProgressBar() {
+  		  if (!progressBar) return;
+
+    	 // 1) 먼저 0%로 리셋
+    	 progressBar.style.transition = 'none';
+    	 progressBar.style.width = '0%';
+
+    	 // 2) 리플로우 강제해서 transition 초기화
+    	 void progressBar.offsetWidth;
+
+    	 // 3) autoplay 딜레이에 맞춰 0 → 100% 채우기
+    	 progressBar.style.transition = `width ${autoplayDelay}ms linear`;
+    	 progressBar.style.width = '100%';
+  		}
+
+  		 // ✅ 처음 시작할 때 한번 실행
+  		 startProgressBar();
+
+  		 // ✅ 슬라이드가 바뀔 때마다 다시 채우게
+  		 mv_swiper.on('slideChangeTransitionStart', () => {
+    	 startProgressBar();
+  		 });
+
+  		 // ✅ autoplay가 멈출 때(마우스 올려서 정지 등) 막대 멈추도록
+  		 mv_swiper.on('autoplayStop', () => {
+   		  if (!progressBar) return;
+   		  progressBar.style.transition = 'none';
+   		  progressBar.style.width = '0%';
+  		});
+
+  		 // ✅ autoplay 다시 시작되면 또 채우기
+  		 mv_swiper.on('autoplayStart', () => {
+   		 startProgressBar();
+  		});
 		
     </script>
   <!-- // Visual  -->
