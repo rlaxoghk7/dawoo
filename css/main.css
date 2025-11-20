@@ -408,9 +408,25 @@
     /* border-radius: 30px; */
     overflow: hidden;
 }
-.main_visual .swiper .prev, .main_visual .swiper .next{font-size:50px;color:#fff;position:absolute;top:50%;transform:translateY(-50%);z-index: 99;}
-.main_visual .swiper .prev {left:calc((100% - 1400px)/2);}
-.main_visual .swiper .next {right:calc((100% - 1400px)/2);}
+.main_visual .swiper .prev, .main_visual .swiper .next{position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;}
+  .main_visual .swiper .prev:hover, .main_visual .swiper .next:hover {background-color: #466ff7; transition: .4s;}
+  .main_visual .swiper .prev span, .main_visual .swiper .next span {font-size: 40px; color: #000;}
+  .main_visual .swiper .prev span:hover, .main_visual .swiper .next span:hover {color: #f9f9f9; transition: .4s;}
+  
+.main_visual .swiper .prev {left:calc((100% - 1600px)/2);}
+.main_visual .swiper .next {right:calc((100% - 1600px)/2);}
 /* 230515 유지보수 수정 시작 */
 .main-visual-tab + #mainBul.bullets {z-index:98}
 .main-visual-tab.main-visual-tab.pc.scrollDown  + #mainBul.bullets {z-index:100}
