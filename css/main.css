@@ -66,7 +66,7 @@
 
 
 
-.main_con_tit01{padding: 80px 0 50px;text-align: center;position: relative;}
+.main_con_tit01{padding: 50px 0 50px;text-align: center;position: relative;}
 /* .main-con-06.main-con > .main_con_tit01 {padding-top: 200px;} */
 /* .main_con_tit01:nth-child(2), .main_con_tit01:nth-child(3), .main_con_tit01:nth-child(4) {padding: 80px 0 50px;} */
 .main_con_tit01 .cate{margin-bottom: 10px; display: inline-block; position: relative; font-size:22px; color:var(--color); font-weight:500; padding-right:15px; text-transform:uppercase; background:url(../../images/main/red-dot.png)no-repeat top right;}
@@ -881,7 +881,7 @@
 .main-con-06 .biz-category > li a{display: flex; align-items:center; justify-content:center; height:60px; font-family: "GmarketSansMedium";}
 
 
-.main-con-06{background-color: #fff; padding-top: 150px; box-shadow: 10px -20px 20px rgba(0, 0, 0, 0.1);}
+.main-con-06{background-color: #fff; margin-top: 160px; }
 .main-con-06 .biz-category{margin-bottom:40px;}
 .main-con-06 .grid{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:20px;}
 .main-con-06 #con02 .grid {display: unset;}
@@ -963,7 +963,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 75%;        
+  bottom: -120px;        
   z-index: 1;
   margin: 0 auto;
   width: 100%;     
