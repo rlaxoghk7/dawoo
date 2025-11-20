@@ -991,6 +991,7 @@
 .main-visual-tab .grid {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 3rem;
 }
 
@@ -1137,7 +1138,7 @@
 .main-visual-tab .close .op{display:none;} */
 
 @media(max-width:1400px) {
-  .main-visual-tab {top: 20%; left: 80%;}
+  /* .main-visual-tab {top: 20%; left: 80%;} */
   .main-visual-tab .grid-wrap .grid-menu {width: 100%;}
   .main-visual-tab .close {top: 92%; left: -10%;}
 }
