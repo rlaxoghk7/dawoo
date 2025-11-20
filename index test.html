@@ -57,8 +57,10 @@
   <script src="./js/sly.min.js"></script>
 	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
 	<script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script><script src="/js/DaumPostcode.js"></script>
+	
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -517,7 +519,7 @@
           <div class="swiper-slide">
             <a href="./index.html">
 					    <div class="bg">
-                <img class="pc" src="./images/MAIN1-3.png" alt="">
+                <img class="pc" src="./images/MAIN1.jpg" alt="">
 						    <img class="m" src="./images/MAIN2.jpg" alt="">
               </div>
 					  </a>
@@ -525,7 +527,7 @@
 					<div class="swiper-slide">
             <a href="./index.html">
 					    <div class="bg">
-                <img class="pc" src="./images/MAIN1-2.png" alt="">
+                <img class="pc" src="./images/MAIN1-2.jpg" alt="">
 						    <img class="m" src="./images/MAIN2-2.jpg" alt="">
               </div>
 					  </a>
@@ -533,7 +535,7 @@
 					<div class="swiper-slide">
             <a href="./index.html">
 					    <div class="bg">
-                <img class="pc" src="./images/MAIN1.png" alt="">
+                <img class="pc" src="./images/MAIN1-3.jpg" alt="">
 						    <img class="m" src="./images/MAIN2-3.jpg" alt="">
               </div>
 					  </a>
@@ -559,12 +561,12 @@
          infinite: true,
 
          //슬라이딩 속도
-         speed: 1000,
+         speed: 900,
 
 
          //자동 슬라이드
          autoplay: {
-         delay: 3000, //딜레이 
+         delay: 5000, //딜레이 
          },
 
          //페이지네이션
@@ -592,34 +594,6 @@
 .main-con-02 .item .txt,
 .main-con-02 .item{height:100%;}
 </style>
-
-<!-- 비쥬얼탭 -->
-<div class="main-visual-tab pc">
-	<div class="auto">
-		<div class="grid-wrap">
-			<div class="grid-menu">
-				<div class="grid">
-					<div class="D-logo">
-						<img src="./images/D-logo1.png" alt="다우로고">
-					</div>
-					<div class="phone">
-						<p class="num">1899 - 5338</p>
-						<p class="day">09:00~18:00 토·일<br>공휴일 휴무</p>
-					</div>
-					<a href="./apply_online.html"><span><img src="./images/1.png" alt=""></span><p>수강신청</p></a>	
-					<a href="./apply_qna.html"><span><img src="./images/2.png" alt=""></span><p>입학 Q&A</p></a>
-					<a href="./apply_con.html"><span><img src="./images/3.png" alt=""></span><p>간편문의</p></a>
-				</div>
-				
-			</div>	
-			<!-- <a href="#" class="close">
-				<span class="material-symbols-outlined close-icon">close</span>	
-				<span class="material-symbols-outlined open-icon">menu_open</span>
-			</a> -->
-		</div>
-	</div>
-</div>
-<!-- // 비쥬얼탭 -->
 
 
 <div class="main-con-06 main-con"  data-aos="fade-up" data-aos-duration="1100">
@@ -1845,7 +1819,46 @@ $(".pop .pop_cover").on("click",function(){
 
 	<!-- // Footer -->
 </body>
+<div class="main-visual-tab pc">
+	<div class="auto">
+		<div class="grid-wrap">
+			<div class="grid-menu">
+				<div class="grid">
+					<a href="./apply_online.html"><span><img src="./images/1.png" alt=""></span><p>수강신청</p></a>	
+					<a href="./apply_qna.html"><span><img src="./images/2.png" alt=""></span><p>입학 Q&A</p></a>
+					<a href="./apply_con.html"><span><img src="./images/3.png" alt=""></span><p>간편문의</p></a>
+					<!-- <a href="#" target="_blank"><span><img src="./images/main-visual-tab-icon-04.png" alt=""></span>카톡 상담</a> -->
+				</div>
+				<div class="phone">
+					<p class="num">1899<br>5338</p>
+					<p class="day">09:00~18:00 토·일<br>공휴일 휴무</p>
+				</div>
+			</div>	
+			<a href="#" class="close">
+				<span class="material-symbols-outlined close-icon">close</span>	
+				<span class="material-symbols-outlined open-icon">menu_open</span>
+			</a>
+		</div>
+	</div>
+</div>
 
+<script>
+	$(".main-visual-tab .close").on("click", function (e) {
+		e.preventDefault();
+  const $gridMenu = $(".main-visual-tab .grid-menu");
+  const $closeIcon = $(this).find(".close-icon");
+  const $openIcon = $(this).find(".open-icon");
+
+  if ($gridMenu.hasClass("slideOut")) {
+    $gridMenu.removeClass("slideOut");
+    $closeIcon.show();
+    $openIcon.hide();
+  } else {
+    $gridMenu.addClass("slideOut");
+    $closeIcon.hide();
+    $openIcon.show();
+  }
+});
 
 </script>
 </html>

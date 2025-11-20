@@ -67,6 +67,8 @@
 
 
 .main_con_tit01{padding: 80px 0 50px;text-align: center;position: relative;}
+/* .main-con-06.main-con > .main_con_tit01 {padding-top: 200px;} */
+/* .main_con_tit01:nth-child(2), .main_con_tit01:nth-child(3), .main_con_tit01:nth-child(4) {padding: 80px 0 50px;} */
 .main_con_tit01 .cate{margin-bottom: 10px; display: inline-block; position: relative; font-size:22px; color:var(--color); font-weight:500; padding-right:15px; text-transform:uppercase; background:url(../../images/main/red-dot.png)no-repeat top right;}
 .main_con_tit01 .tit{font-size: 48px;color: #000;font-weight: 700;letter-spacing: -0.025em;}
 .main_con_tit01 .con{font-size: 22px;color: #000;font-weight:300;margin-top: 10px;line-height: 135%;}
@@ -405,7 +407,6 @@
 .main_visual .swiper {
     /* border-radius: 30px; */
     overflow: hidden;
-    border-radius: 0 0 0 200px ;
 }
 .main_visual .swiper .prev, .main_visual .swiper .next{font-size:50px;color:#fff;position:absolute;top:50%;transform:translateY(-50%);z-index: 99;}
 .main_visual .swiper .prev {left:calc((100% - 1400px)/2);}
@@ -413,7 +414,7 @@
 /* 230515 유지보수 수정 시작 */
 .main-visual-tab + #mainBul.bullets {z-index:98}
 .main-visual-tab.main-visual-tab.pc.scrollDown  + #mainBul.bullets {z-index:100}
-#mainBul.bullets {position: absolute;bottom:8%;left: 50%;transform: translateX(-50%);display: flex;align-items: center;justify-content: center; z-index: 99;}
+#mainBul.bullets {position: absolute; top:70%;left: 50%;transform: translateX(-50%);display: flex;align-items: center;justify-content: center; z-index: 99;}
 #mainBul.bullets span{width: 17px;height: 17px;background: #ffffff6b;opacity:1;}
 #mainBul.bullets span.swiper-pagination-bullet-active{background: #fff;/* border:3px solid #fff; */width:17px;height:17px;/* margin: 0 9px; */}
 /* //230515 유지보수 수정 종료 */
@@ -539,7 +540,7 @@
 }
 
 
-.main-con-02{padding-bottom:120px; background: rgb(255,255,255); background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,244,248,1) 100%);}
+.main-con-02{padding-bottom:100px; background: rgb(255,255,255); background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(241,244,248,1) 100%);}
 .main-con-02 .swiper{padding: 30px 10%;}
 .main-con-02 .swiper .swiper-wrapper{transition-timing-function: linear;}
 .main-con-02 .swiper .swiper-wrapper .swiper-silde{}
@@ -561,7 +562,7 @@
 }
 
 
-.main-con-03{padding-bottom: 150px; border-radius: 300px 0 0 300px; box-shadow: -4px 7px 20px rgba(0, 0, 0, 0.1); background-color: #fff;}
+.main-con-03{padding-bottom: 100px; background-color: #fff;}
 .main-con-03 ul{gap:5%; display:flex;}
 .main-con-03 ul li{width: 25%; margin-right: 20px;}
 .main-con-03 ul li:hover{}
@@ -866,7 +867,7 @@
 
 }
 
-.main-con-06 .main-wrap {padding-bottom: 50px;}
+.main-con-06 .main-wrap {padding-bottom: 100px;}
 
 .main-con-06 .tab_wrap .tab_con .tab_list {
 	display: none;
@@ -880,7 +881,7 @@
 .main-con-06 .biz-category > li a{display: flex; align-items:center; justify-content:center; height:60px; font-family: "GmarketSansMedium";}
 
 
-.main-con-06{background-color: #fff; padding-bottom: 80px; box-shadow: 10px -20px 20px rgba(0, 0, 0, 0.1);border-radius: 0px 200px 200px 0;}
+.main-con-06{background-color: #fff; padding-top: 150px; box-shadow: 10px -20px 20px rgba(0, 0, 0, 0.1);}
 .main-con-06 .biz-category{margin-bottom:40px;}
 .main-con-06 .grid{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:20px;}
 .main-con-06 #con02 .grid {display: unset;}
@@ -937,21 +938,121 @@
   .main-con-06 {border-radius: 0};
 }
 
-.main-con-07 {border-radius: 150px 150px 150px 150px; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); margin-bottom: 100px; background-color: #fff;}
+.main-con-07 {border-radius: 150px 150px 0px 0px; background-color: #fff;}
 @media(max-width:500px) {
-  .main-con-07 { border-radius: 50px 50px 50px 50px;}
+  .main-con-07 { border-radius: 50px 50px 0 0;}
   .section04 {padding-bottom: 50px;}
 }
 
 
-.main-visual-tab{
+/* .main-visual-tab{
     position: fixed;
-    top: 20%;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
     z-index: 99;
-    left: 86%;
+} */
+
+/* 고치는 영역 */
+/* .main-visual-wrap {
+  position: relative;
+} */
+
+/* 비주얼 바로 아래에 겹쳐 보이게 */
+.main-visual-tab.pc {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 75%;        
+  z-index: 1;
+  margin: 0 auto;
+  width: 100%;     
 }
 
-.main-visual-tab .grid-wrap .grid-menu.slideOut {
+/* 안쪽 카드 박스 */
+.main-visual-tab .auto {
+  padding: 0 20px;
+}
+
+.main-visual-tab .grid-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  padding: 20px 28px;
+}
+
+/* 메뉴 아이콘들 (가로로 나열) */
+.main-visual-tab .grid {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main-visual-tab .grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.main-visual-tab .grid span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* 전화 박스 */
+.main-visual-tab .phone {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding-right: 2rem;
+}
+
+.main-visual-tab .phone .num {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 닫기 버튼 위치 (카드 오른쪽 상단) */
+.main-visual-tab .close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #f2f2f2;
+}
+
+.main-visual-tab .open-icon {
+  display: none; /* 처음엔 닫기 아이콘만 보이게 */
+}
+
+/* 숨김 애니메이션: 아래로 내려가게 */
+.main-visual-tab.is-hidden {
+  transform: translate(-50%, 120%);  /* Y 값만 더 내려주기 */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-visual-tab.pc,
+.main-visual-tab.is-hidden {
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* //고치는 영역끝 */
+
+/* .main-visual-tab .grid-wrap .grid-menu.slideOut {
   transform: translateX(200%);
 }
 .main-visual-tab .grid-wrap {position: relative;}
@@ -1033,7 +1134,7 @@
 .main-visual-tab.scrollDown .close .cl{display:none;}
 .main-visual-tab.scrollDown .close .op{display:inline;}
 .main-visual-tab .close .cl{display:inline;}
-.main-visual-tab .close .op{display:none;}
+.main-visual-tab .close .op{display:none;} */
 
 @media(max-width:1400px) {
   .main-visual-tab {top: 20%; left: 80%;}
