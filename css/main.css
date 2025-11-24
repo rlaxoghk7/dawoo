@@ -70,7 +70,7 @@
 /* .main-con-06.main-con > .main_con_tit01 {padding-top: 200px;} */
 /* .main_con_tit01:nth-child(2), .main_con_tit01:nth-child(3), .main_con_tit01:nth-child(4) {padding: 80px 0 50px;} */
 .main_con_tit01 .cate{margin-bottom: 10px; display: inline-block; position: relative; font-size:22px; color:var(--color); font-weight:500; padding-right:15px; text-transform:uppercase; background:url(../../images/main/red-dot.png)no-repeat top right;}
-.main_con_tit01 .tit{font-size: 48px;color: #000;font-weight: 700;letter-spacing: -0.025em;}
+.main_con_tit01 .tit{font-size: 48px;color: #000;font-weight: 700;letter-spacing: -0.025em; font-family: 'GmarketSansMedium';}
 .main_con_tit01 .con{font-size: 22px;color: #000;font-weight:300;margin-top: 10px;line-height: 135%;}
 .main_con_tit01.white .tit{color:#fff;}
 .main_con_tit01.white .con{color:#fff; opacity: .7;}
@@ -1103,7 +1103,7 @@
 .main-visual-tab .grid-right a img {
   display: block;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 /* 닫기 버튼 위치 (카드 오른쪽 상단) */
