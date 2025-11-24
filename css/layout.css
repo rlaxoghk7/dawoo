@@ -75,8 +75,9 @@ img{max-width:100%;}
   padding:.6rem 1rem; border-radius:999px; border:none;
   cursor:pointer; font-weight:600;
   color: #476ef3;
+  background-color: #fff;
 }
-.sitemap-btn:hover{color: #fff;}
+.sitemap-btn:hover{color: #fff; background-color: #476ef3; transition: ease .7s; font-weight: 500;}
 
 /* --- 오버레이 레이어 --- */
 .sitemap-overlay{
@@ -102,14 +103,14 @@ img{max-width:100%;}
 /* --- 패널 --- */
 .sitemap-panel{
   width:100%;
-  height:100%;
+  height:100vh;
   background:url(../images/sitemap.png) no-repeat center / cover;
 	padding: 2% 5%;
   transform:translateY(10px); transition:transform .25s ease;
-	border-radius: 0px 0px 0px 300px;
 	opacity: 1;
   transform: translateY(8px) scale(1);
   transition: opacity .8s ease, transform .8s ease;
+  /* border-radius: 10% 10% 10% 10%; */
 }
 .sitemap-overlay.is-open .sitemap-panel{ transform:translateY(0); }
 
@@ -137,21 +138,21 @@ img{max-width:100%;}
 /* --- 그리드 --- */
 .sitemap-grid{
   display:grid; gap:28px;
-  grid-template-columns: repeat(4, minmax(0,1fr));
+  grid-template-columns: repeat(4, 1fr);
 }
 .sitemap-col {margin: 10% 0 0; text-align: center;}
-.sitemap-col.col5 {grid-area: 2/2/3/3;}
-.sitemap-col.col6 {grid-area: 2/3/3/4;}
-.sitemap-col.col7 {grid-area: 2/4/3/5;}
+.sitemap-col.col5 {grid-area: 2/1/3/2;}
+.sitemap-col.col6 {grid-area: 2/2/3/3;}
+.sitemap-col.col7 {grid-area: 2/3/3/4;}
 
 .sitemap-col h3{
-  font-size:22px; font-weight:800; color:#333; padding-bottom:8%;
+  font-size:1.5rem; font-weight:900; color:#333; padding-bottom:8%;
 }
 
 .sitemap-col ul{ display:grid; gap:8px; }
 /* .sitemap-col ul::before {content: ''; width: 3px; height: 30px; position: relative; background-color: #476ef3; top: 5%; left: 50%; display: block;} */
 .sitemap-col a{
-  color:#aaa; text-decoration:none; line-height:1.5;
+  color:#888; text-decoration:none; line-height:1.5; font-size: 1.2rem;
 }
 .sitemap-col a:hover{ color:#476ef3; text-decoration:none; font-weight: 600;}
 
