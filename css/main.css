@@ -1250,12 +1250,75 @@
   .main-visual-tab .grid-menu{transform:none; opacity:1;}
 } */
 
-.quick-menu.fixed{position:fixed;top: 250px;}
-.quick-menu{position:absolute; top:1060px; right: calc((100% - 1280px - 230px)/2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
-.quick-menu a{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;}
+.quick-floating {
+  position: fixed;
+  right: 5rem;     /* 화면 오른쪽 여백 */
+  bottom: 8rem;    /* 화면 아래 여백 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 999;
+  opacity: 0;              /* 처음엔 숨김 */
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity .25s ease, 
+              transform .25s ease,
+              visibility .25s ease;
+}
 
-.sub .quick-menu{top:500px;}
-.sub .quick-menu.fixed{top:300px}
+/* 스크롤 내려갔을 때 보여줄 때 쓸 클래스 */
+.quick-floating.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 공통 버튼 스타일 */
+.quick-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  font-size: 13px;
+}
+
+/* 1:1 문의하기 (필요하면 텍스트 바꿔서 여러 개 추가해도 됨) */
+.quick-item--inquiry {
+  padding: 12px 16px;
+  border-radius: 999px;
+}
+
+.quick-item__label {
+  white-space: nowrap;
+}
+
+/* 맨 위로 버튼 */
+.quick-item--top {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+
+
+/* 호버 효과 */
+.quick-item:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+.quick-item--top:hover {
+  background: #3763f5;
+  color: #fff;
+}
 
 @media(max-width:1500px){
 .quick-menu{right:20px;gap:10px;bottom: 20px;flex-direction: row;top: auto !important;position: fixed !important;background: #ffffffa3;padding: 10px 20px;border-radius: 10px;box-shadow: 0 0 10px rgba(0,0,0,.2);}
