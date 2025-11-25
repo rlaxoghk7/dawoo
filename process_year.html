@@ -796,46 +796,6 @@
 
 
 </body>
-<div class="main-visual-tab pc">
-	<div class="auto">
-		<div class="grid-wrap">
-			<div class="grid-menu">
-				<div class="grid">
-					<a href="./apply_online.html"><span><img src="./images/1.png" alt=""></span><p>수강신청</p></a>	
-					<a href="./apply_qna.html"><span><img src="./images/2.png" alt=""></span><p>입학 Q&A</p></a>
-					<a href="./apply_con.html"><span><img src="./images/3.png" alt=""></span><p>간편문의</p></a>
-					<!-- <a href="#" target="_blank"><span><img src="./images/main-visual-tab-icon-04.png" alt=""></span>카톡 상담</a> -->
-				</div>
-				<div class="phone">
-					<p class="num">1899<br>5338</p>
-					<p class="day">09:00~18:00 토·일<br>공휴일 휴무</p>
-				</div>
-			</div>	
-			<a href="#" class="close">
-				<span class="material-symbols-outlined close-icon">close</span>	
-				<span class="material-symbols-outlined open-icon">menu_open</span>
-			</a>
-		</div>
-	</div>
-</div>
 
-<script>
-	$(".main-visual-tab .close").on("click", function (e) {
-		e.preventDefault();
-  const $gridMenu = $(".main-visual-tab .grid-menu");
-  const $closeIcon = $(this).find(".close-icon");
-  const $openIcon = $(this).find(".open-icon");
-
-  if ($gridMenu.hasClass("slideOut")) {
-    $gridMenu.removeClass("slideOut");
-    $closeIcon.show();
-    $openIcon.hide();
-  } else {
-    $gridMenu.addClass("slideOut");
-    $closeIcon.hide();
-    $openIcon.show();
-  }
-});
-</script>
 
 </html>
