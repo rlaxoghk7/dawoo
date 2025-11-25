@@ -2835,7 +2835,7 @@ img{max-width:100%;}
 /*******************************************************************
 *	sub_contents
 ********************************************************************/
-#subContents{padding-top:60px;min-height:500px; overflow:hidden;}
+#subContents{padding:60px 0;min-height:500px; overflow:hidden;}
 #subContents #contents{font-weight: 300; line-height: 155%; padding:40px 0 0 0; position:relative;}
 #subContents .sub_contents_tit {font-size:35px; color:#000; font-weight: 700; position: relative; text-align: center; padding-bottom: 60px;}
 #subContents .sub_contents_tit::after{width:1px; background:  #e5e5e5; height: 40px; content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom:0px;}

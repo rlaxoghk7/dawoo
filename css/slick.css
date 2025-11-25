@@ -118,3 +118,34 @@
     display: none;
 }
 .slick-prev, .slick-next {display: none !important;}
+
+
+/* 계열사 */
+
+.swiper{
+    padding-bottom: 100px;
+}
+.flowSwiper {
+    background-color: #c8d5ff;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+.flowSwiper .swiper-wrapper {
+  
+  transition-timing-function: linear !important; /* 등속 이동 강제 */
+}
+
+.flowSwiper .swiper-slide {
+  width: auto; 
+  padding: 2rem 30px;
+  display: flex;
+  align-items: center;
+}
+
+.flowSwiper img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
