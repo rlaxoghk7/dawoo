@@ -123,10 +123,10 @@
 /* 계열사 */
 
 .swiper{
-    padding-bottom: 100px;
+margin-bottom: 100px;
+background: linear-gradient(to bottom, #fff, #cad0ff, #fff);
 }
 .flowSwiper {
-    background-color: #c8d5ff;
   width: 100%;
   overflow: hidden;
   
