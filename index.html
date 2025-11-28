@@ -43,6 +43,8 @@
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
+  <!-- swiper css -->
+  <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
   <!-- js -->
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/common.js"></script>
@@ -1407,21 +1409,56 @@ $(window).scroll(function() {
 	  </div>
 
 <script>
-  const flowSwiper = new Swiper(".flowSwiper", {
-    loop: true,
-    slidesPerView: "auto",
-    spaceBetween: 0,
-    allowTouchMove: false,  // 손으로 드래그 금지 (선택)
+  window.addEventListener('DOMContentLoaded', function () {
+    console.log('[flow] DOM ready');
 
-    autoplay: {
+    if (typeof Swiper === 'undefined') {
+      console.error('[flow] Swiper is NOT loaded');
+      return;
+    }
+
+    const flowSwiper = new Swiper('.flowSwiper', {
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      allowTouchMove: false,
+      autoplay: {
       delay: 0,
       disableOnInteraction: false,
-    },
+      },
+      speed: 5000,              // 휠 이동이 눈에 잘 보이도록 짧게
+      loopAdditionalSlides: 3,
+    });
+    console.log('[flow] swiper created', flowSwiper);
 
-    speed: 8000, // 숫자 커지면 느리게, 15000 하면 더 천천히
-	loopAdditionalSlides: 20,
+    const flowArea = document.querySelector('.flowSwiper');
+    if (!flowArea) {
+      console.error('[flow] .flowSwiper element NOT found');
+      return;
+    }
+    console.log('[flow] flowArea found', flowArea);
+
+    flowArea.addEventListener('wheel', function (e) {
+      e.preventDefault();
+
+      const delta = e.deltaY || -e.wheelDelta || 0;
+
+      // 한 번에 여러 슬라이드씩 확 움직이게
+      const step = 1; // 필요하면 1~5 사이로 조절
+
+      if (delta > 0) {
+        flowSwiper.slideTo(flowSwiper.activeIndex + step, 2000);
+      } else if (delta < 0) {
+        flowSwiper.slideTo(flowSwiper.activeIndex - step, 2000);
+      }
+
+      console.log('[flow] wheel', delta, '→ activeIndex', flowSwiper.activeIndex);
+    }, { passive: false });
+
+    console.log('[flow] wheel listener attached');
   });
 </script>
+
   <!-- //계열사 -->
 
 	<!-- Footer -->
